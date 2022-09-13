@@ -1,3 +1,4 @@
+
 ALPHABET_MORSEA = {
     "A": ".-",
     "B": "-...",
@@ -65,3 +66,14 @@ ALPHABET_MORSEA = {
     "¿": "..-.-",
     "¡": "--...-",
 }
+
+
+def convert_to_morse(txt_to_convert):
+    text = ""
+    for char in txt_to_convert:
+        if char == "\u0020":  # \u0020 -> space in unicode
+            text += "/" + "\u0020"
+        else:
+            text += ALPHABET_MORSEA[char] + "\u0020"
+    return text
+
