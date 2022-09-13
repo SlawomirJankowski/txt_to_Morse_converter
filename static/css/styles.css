@@ -1,0 +1,101 @@
+/* https://colorhunt.co/palette/645caaa084cabface0ebc7e8 */
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    font-family: "Lato";
+    text-align: center;
+    margin: 0 0 150px;
+    min-height: 100%;
+    background-color: #FEF5ED;
+}
+
+h1{
+    padding-bottom: 5%;
+    font-size: 4rem;
+}
+
+p{
+    margin-top: 8px;
+}
+
+.converter {
+    padding-top: 3%;
+    /*background-image: url("../images/morse-code-blog-thumb-552x350-1-900x571.jpg"); 
+    background-size: cover;*/
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+.converter-content{
+    padding: 4% 15%;
+    
+}
+
+.input-form{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.form-control{
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5;
+
+}
+
+.btn{
+    width: 200px;
+    height: 49px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.col{
+    align-items: center;
+    padding-top: 2%;
+}
+
+.play-download-section{
+    display: inline-block;
+}
+
+
+.title-navbar{
+    background-color: #99A799;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 1% 15%;
+}
+
+.link-icon {
+    color: #FEF5ED;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-top: 20px;
+}
+
+.link-icon:hover{
+    
+    color: #132e27;
+}
+
+footer {
+    background-color: #ADC2A9;
+    color: #FEF5ED;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}

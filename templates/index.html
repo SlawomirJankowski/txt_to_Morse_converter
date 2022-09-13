@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="converter" >
+        <div class="converter-content">
+            <h1>Text to alphabet Morse'a converter</h1>
+
+            {% if not converted_text: %}
+            <form class="input-form" action="{{ url_for('home') }}" method="post">
+            <!-- <input type="text" name="txt_to_convert" placeholder="Enter the text to convert ..."> -->
+                <textarea  name="txt_to_convert" class="form-control" rows="5" placeholder="Enter the text to convert ..."></textarea>
+                <br>
+                <button type="submit" name="convert" class="btn btn-dark btn-lg ">Convert</button>
+            </form>
+            {% else: %}
+            <form class="input-form">
+                <textarea type="text" readonly class="form-control" rows="5">{{ text_from_user }}</textarea>
+                <br>
+                <a id="reset" role="button" name="reset" class="btn btn-danger btn-lg " href="{{ url_for('reset', file_path=file_path) }}">Reset</i></a>
+            </form>
+
+            <textarea id="morse" type="text" readonly class="form-control" rows="5">{{ converted_text }}</textarea>
+            <br>
+            <div class="play-download-section">
+                <div class="row">
+                    <div class="col">
+                        <audio controls preload="auto">
+                            <source src="{{ file_path }}" type="audio/wav">
+                            Your browser does not support the <code>audio</code> element.
+                        </audio>
+                    </div>
+                    <div class="col">
+                        <a name="download-btn" role="button" class="btn btn-dark btn-lg" href="{{ url_for('download', file_path=file_path) }}">Download</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
