@@ -4,25 +4,53 @@
     <section class="converter" >
         <div class="converter-content">
             <h1>Text to alphabet Morse'a converter</h1>
-
             {% if not converted_text: %}
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+
+                            <div class="alert alert-danger">{{ message }}</div>
+
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
             <form class="input-form" action="{{ url_for('home') }}" method="post">
-            <!-- <input type="text" name="txt_to_convert" placeholder="Enter the text to convert ..."> -->
-                <textarea  name="txt_to_convert" class="form-control" rows="5" placeholder="Enter the text to convert ..."></textarea>
+               <div class="form-floating"> 
+                    <textarea id="floatingTextarea" name="txt_to_convert" class="form-control" rows="5" placeholder="Enter the text to convert ..."></textarea>
+                    <label for="floatingTextarea" class="lbl_1 fs-5">Enter the text to convert ...</label>
+               </div>
                 <br>
                 <button type="submit" name="convert" class="btn btn-dark btn-lg ">Convert</button>
             </form>
-            {% else: %}
-            <form class="input-form">
-                <textarea type="text" readonly class="form-control" rows="5">{{ text_from_user }}</textarea>
-                <br>
-                <a id="reset" role="button" name="reset" class="btn btn-danger btn-lg " href="{{ url_for('reset', file_path=file_path) }}">Reset</i></a>
-            </form>
 
-            <textarea id="morse" type="text" readonly class="form-control" rows="5">{{ converted_text }}</textarea>
+            {% else: %}
+
+            <form class="input-form mb-3">
+                <div class="source-morse-display">
+                    <label for="sourceText" class="form-label fs-4 lbl_2">  Source text ...</label>
+                    <textarea id="sourceText" readonly class="form-control" rows="5">{{ text_from_user }}</textarea>
+                </div>
+                <br>
+                <div class="source-morse-display">
+                    <label  for="morse-code" class="form-label fs-4 lbl_2"> Converted text into Morse'a code ...</label>
+                    <textarea readonly class="form-control" id="morse-code" rows="5">{{ converted_text }}</textarea>
+                </div>
+            </form>
             <br>
             <div class="play-download-section">
                 <div class="row">
+                    <div class="col">
+                        <input type="button" class="btn btn-dark btn-lg" onclick="copy_to_clipboard('morse-code')" value="Copy Morse'a code">
+                        <script>
+                            function copy_to_clipboard(id)
+                            {
+                                document.getElementById(id).select();
+                                document.execCommand('copy');
+                            }
+                        </script>
+                    </div>
+
                     <div class="col">
                         <audio controls preload="auto">
                             <source src="{{ file_path }}" type="audio/wav">
@@ -30,7 +58,12 @@
                         </audio>
                     </div>
                     <div class="col">
-                        <a name="download-btn" role="button" class="btn btn-dark btn-lg" href="{{ url_for('download', file_path=file_path) }}">Download</a>
+                        <a name="download-btn" role="button" class="btn btn-dark btn-lg" href="{{ url_for('download', file_path=file_path) }}">Download sound file</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a id="reset" role="button" name="reset" class="btn btn-danger btn-lg " href="{{ url_for('reset', file_path=file_path) }}">Reset</a>
                     </div>
                 </div>
             </div>

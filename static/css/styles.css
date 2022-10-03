@@ -5,48 +5,77 @@ html{
 }
 
 body{
+    /*background-image: url("../images/background.png");
+    background-size: flex;
+    background-attachment: fixed;*/
+    background-color: #FEF5ED;
     font-family: "Lato";
     text-align: center;
     margin: 0 0 150px;
     min-height: 100%;
-    background-color: #FEF5ED;
 }
 
 h1{
-    padding-bottom: 5%;
+    font-family: "Merriweather";
     font-size: 4rem;
 }
 
 p{
-    margin-top: 8px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #ADC2A9;
+    color: #FEF5ED;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .converter {
     padding-top: 3%;
-    /*background-image: url("../images/morse-code-blog-thumb-552x350-1-900x571.jpg"); 
-    background-size: cover;*/
-    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    position: relative;
-    
+    position: relative;   
+}
+
+.d-inline-block{
+    font-weight: 500;
 }
 
 .converter-content{
-    padding: 4% 15%;
-    
+    padding: 4% 15%; 
+}
+
+#floatingTextarea{
+    height: 150px;
 }
 
 .input-form{
     padding-top: 3%;
     padding-bottom: 3%;
+    margin-bottom: 0 !important;
+}
+
+.lbl_1, .lbl_2{
+    font-weight: 600;
+    color: #034d03;
+}
+
+
+.source-morse-display{
+    text-align: left ;
+    margin-top: 2rem;
 }
 
 .form-control{
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 1.5;
-
+    font-family: "Merriweather";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2;
+    background-color: #FFFFFF !important;
 }
 
 .btn{
@@ -61,15 +90,23 @@ p{
 .col{
     align-items: center;
     padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .play-download-section{
     display: inline-block;
 }
 
-
 .title-navbar{
     background-color: #99A799;
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .contact-section {
@@ -85,17 +122,6 @@ p{
 }
 
 .link-icon:hover{
-    
     color: #132e27;
 }
 
-footer {
-    background-color: #ADC2A9;
-    color: #FEF5ED;
-    width: 100%;
-    height: 150px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-}
