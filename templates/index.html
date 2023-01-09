@@ -3,7 +3,7 @@
 {% block content %}
     <section class="converter" >
         <div class="converter-content">
-            <h1>Text to alphabet Morse'a converter</h1>
+            <h1>Text to alphabet Morse converter</h1>
             {% if not converted_text: %}
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -17,7 +17,8 @@
 
             <form class="input-form" action="{{ url_for('home') }}" method="post">
                <div class="form-floating"> 
-                    <textarea id="floatingTextarea" name="txt_to_convert" class="form-control" rows="5" placeholder="Enter the text to convert ..."></textarea>
+                    <textarea id="floatingTextarea" name="txt_to_convert" class="form-control" rows="5"
+                              placeholder="Enter the text to convert ..."></textarea>
                     <label for="floatingTextarea" class="lbl_1 fs-5">Enter the text to convert ...</label>
                </div>
                 <br>
@@ -33,7 +34,7 @@
                 </div>
                 <br>
                 <div class="source-morse-display">
-                    <label  for="morse-code" class="form-label fs-4 lbl_2"> Converted text into Morse'a code ...</label>
+                    <label  for="morse-code" class="form-label fs-4 lbl_2"> Converted text into Morse code ...</label>
                     <textarea readonly class="form-control" id="morse-code" rows="5">{{ converted_text }}</textarea>
                 </div>
             </form>
@@ -41,7 +42,7 @@
             <div class="play-download-section">
                 <div class="row">
                     <div class="col">
-                        <input type="button" class="btn btn-dark btn-lg" onclick="copy_to_clipboard('morse-code')" value="Copy Morse'a code">
+                        <input type="button" class="btn btn-dark btn-lg" onclick="copy_to_clipboard('morse-code')" value="Copy Morse code">
                         <script>
                             function copy_to_clipboard(id)
                             {
