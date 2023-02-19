@@ -5,6 +5,6 @@
 - Użytkownik może dodatkowo wygenerować plik audio z kodem w alfabecie Morse'a.
 - Plik audio można bezpośrednio odtworzyć i/lub pobrać na dysk.
 
-##Tech
+## Tech
 - Python 3.10 + FLASK
 - zaimplementowany APScheduler - do usuwania niechcianych plików z serwera oraz wysyłania statystyk
